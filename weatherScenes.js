@@ -1,6 +1,5 @@
 const { Scenes } = require("telegraf");
-const { SMD_TEXT } = require("./const");
-const { myLocationBtn, getMoreBtn, nextBtn, prevBtn } = require("./ui");
+const { getMoreBtn, nextBtn, prevBtn } = require("./ui");
 const { getWeather, getCoords, getForecast } = require("./weatherApi");
 
 const whatWeatherScene = new Scenes.BaseScene("weatherByLocation");

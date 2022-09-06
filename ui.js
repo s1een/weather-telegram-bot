@@ -7,12 +7,6 @@ const mainMenu = Markup.keyboard([
   [SMD_TEXT.forecastByLocation],
   [SMD_TEXT.forecastByCity],
 ]).resize();
-
-// const secondMenu = Markup.keyboard([
-// [SMD_TEXT.weaherByCity],
-// [SMD_TEXT.weatherByLocation],
-// ]).resize();
-
 const getMoreBtn = Markup.button.callback(SMD_TEXT.getMore, "get_more");
 const nextBtn = Markup.button.callback("❯", "next");
 const prevBtn = Markup.button.callback("❮", "prev");

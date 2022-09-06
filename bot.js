@@ -29,9 +29,15 @@ function setupBot() {
   });
   // cmd
   bot.start((ctx) =>
-    ctx.reply("Welcome", {
-      ...mainMenu,
-    })
+    ctx.replyWithHTML(
+      `
+Hello, <a href="https://t.me/${ctx.from.username}">${ctx.from.first_name}.</a> 🤩
+I'm @my_node_test_bot 🤖 and my purpose is to show you the weather forecast. Choose a search method, and let's check out what I can do.`,
+      {
+        disable_web_page_preview: true,
+        ...mainMenu,
+      }
+    )
   );
   bot.help((ctx) => ctx.reply("Some help text"));
   // menu btns
@@ -46,9 +52,6 @@ function setupBot() {
   );
   bot.hears(SMD_TEXT.forecastByCity, (ctx) =>
     ctx.scene.enter("forecastByCity")
-  );
-  bot.hears("dev", (ctx) =>
-    ctx.reply(new Date(1662434374).toLocaleTimeString())
   );
   return bot;
 }
